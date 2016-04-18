@@ -9,7 +9,11 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class HelloController {
-
+/**
+ * greets the user on home page
+ * @param model
+ * @return 
+ */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String printWelcome(ModelMap model) {
 		System.out.println("HelloController.printWelcome()");
@@ -17,7 +21,11 @@ public class HelloController {
 		return "hello";
 
 	}
-
+/**
+ * greets the specific user
+ * @param name
+ * @return
+ */
 	@RequestMapping(value = "/hello/{name:.+}", method = RequestMethod.GET)
 	public ModelAndView hello(@PathVariable("name") String name) {
 		System.out.println("HelloController.hello()");
